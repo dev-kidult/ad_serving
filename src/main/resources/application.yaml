@@ -1,0 +1,32 @@
+server:
+  error:
+    whitelabel:
+      enabled: false
+
+spring:
+  application.name: adServing
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        use_sql_comments: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    defer-datasource-initialization: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ad-serving
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+  data:
+    web:
+      pageable:
+        one-indexed-parameters: true
+  sql:
+    init:
+      mode: always
+
